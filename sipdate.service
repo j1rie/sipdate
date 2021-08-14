@@ -1,0 +1,14 @@
+[Unit]
+Description=Start sipdate
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/sbin/sipdate
+StandardOutput=null
+StandardError=null
+TimeoutSec=5
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

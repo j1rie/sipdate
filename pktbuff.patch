@@ -1,0 +1,20 @@
+--- pktbuff.c.n	2021-08-12 21:34:25.229581072 +0000
++++ pktbuff.c	2021-07-16 13:12:31.542535706 +0000
+@@ -83,7 +83,7 @@ struct pkt_buff *pktb_alloc(int family,
+ 	struct pkt_buff *pktb;
+ 	void *pkt_data;
+ 
+-	pktb = calloc(1, sizeof(struct pkt_buff) + len + extra);
++	pktb = (struct pkt_buff *)calloc(1, sizeof(struct pkt_buff) + len + extra);
+ 	if (pktb == NULL)
+ 		return NULL;
+ 
+@@ -94,7 +94,7 @@ struct pkt_buff *pktb_alloc(int family,
+ 	pktb->len = len;
+ 	pktb->data_len = len + extra;
+ 
+-	pktb->data = pkt_data;
++	pktb->data = (unsigned char*)pkt_data;
+ 
+ 	if (__pktb_setup(family, pktb) < 0) {
+ 		free(pktb);
