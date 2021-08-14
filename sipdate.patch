@@ -1,3 +1,13 @@
+/*
+ *  Copyright (C) 2021 Joerg Riechardt
+ *
+ *  inspired by work from hanjov, see https://www.ip-phone-forum.de/threads/korrekte-uhrzeit-auf-cisco-8961-9951-9971-an-fritzbox.289093
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ */
 --- sipdate.c.orig	2021-08-12 20:53:12.124815491 +0000
 +++ sipdate.c	2021-08-12 21:01:43.177546769 +0000
 @@ -7,11 +7,20 @@
