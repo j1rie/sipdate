@@ -19,3 +19,4 @@ cp ./sipdate.service /etc/systemd/system/sipdate.service
 systemctl daemon-reload
 systemctl enable sipdate.service
 systemctl start sipdate.service
+systemctl status sipdate.service
