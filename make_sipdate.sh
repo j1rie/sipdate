@@ -1,4 +1,12 @@
+#remove old libnetfilter_queue, if present!
 git clone git://git.netfilter.org/libnetfilter_queue
+./libnetfilter_queue/autogen.sh
+#change prefix if needed
+./libnetfilter_queue/configure --prefix=/usr/local
+cd ./libnetfilter_queue/
+make
+make install
+cd ..
 mkdir sipdate
 cp ./libnetfilter_queue/src/extra/checksum.c ./sipdate/checksum.c
 cp ./libnetfilter_queue/src/extra/ipv4.c ./sipdate/ipv4.c
